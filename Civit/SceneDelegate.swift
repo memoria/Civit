@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         let swipingController = SwipingController(collectionViewLayout: layout)
         
         window?.windowScene = windowScene
