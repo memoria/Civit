@@ -9,6 +9,10 @@
 import UIKit
 
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    let pages = [ Page(imageName: "logo", headerText: "Welcome", bodyText: "Stay informed, and become the world's saving grace."),
+                  Page(imageName: "logo", headerText: "All For One", bodyText: "Your thoughts, voice and actions will make the difference the future needs."),
+                  Page(imageName: "logo", headerText: "Along The Way", bodyText: "Don't forget to stop and smell the roses.")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,11 +22,15 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return pages.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
+        let page = pages[indexPath.item]
+        cell.page = page
+//        cell.logoImage.image = UIImage(named: page.imageName)
+//        cell.descriptionText.text = page.headerText
         return cell
     }
     
