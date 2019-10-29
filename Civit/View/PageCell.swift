@@ -16,8 +16,9 @@ class PageCell: UICollectionViewCell {
             
             logoImage.image = UIImage(named: unwrappedPage.imageName)
             
-            let attributedText = NSMutableAttributedString(string: unwrappedPage.headerText, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)])
-            attributedText.append(NSMutableAttributedString(string: "\n\n\(unwrappedPage.bodyText)", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]))
+            let attributedText = NSMutableAttributedString(string: unwrappedPage.headerText, attributes: [NSAttributedString.Key.font: UIFont.robotoBlack(size: 36), NSAttributedString.Key.foregroundColor: UIColor.mainPink])
+            attributedText.append(NSMutableAttributedString(string: "\n\n\(unwrappedPage.bodyText)", attributes: [NSAttributedString.Key.font: UIFont.robotoLight(size: 20)]))
+            attributedText.append(NSMutableAttributedString(string: unwrappedPage.emphasisText, attributes: [NSAttributedString.Key.font: UIFont.robotoBlack(size: 24)]))
             
             descriptionText.attributedText = attributedText
         }
@@ -39,9 +40,11 @@ class PageCell: UICollectionViewCell {
         textView.isEditable = false
         textView.isScrollEnabled = false
         
-        let attributedText = NSMutableAttributedString(string: "Welcome", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)])
-        attributedText.append(NSMutableAttributedString(string: "\n\nStay informed, and become the world's saving grace.", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]))
         
+//        let attributedText = NSMutableAttributedString(string: "Welcome", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)])
+//        attributedText.append(NSMutableAttributedString(string: "\n\nStay informed, and become the world's saving grace.", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]))
+        let attributedText = NSMutableAttributedString(string: "Placeholder")
+        attributedText.append(NSMutableAttributedString(string: "Placeholder subText"))
         textView.attributedText = attributedText
         return textView
     }()
@@ -69,7 +72,7 @@ class PageCell: UICollectionViewCell {
         addSubview(descriptionText)
         descriptionText.topAnchor.constraint(equalTo: logoImage.bottomAnchor).isActive = true
         descriptionText.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40).isActive = true
-        descriptionText.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        descriptionText.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
         descriptionText.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     

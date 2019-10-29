@@ -9,10 +9,11 @@
 import UIKit
 
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    let pages = [ Page(imageName: "logo", headerText: "Welcome", bodyText: "Stay informed, and become the world's saving grace."),
-                  Page(imageName: "logo", headerText: "All For One", bodyText: "Your thoughts, voice and actions will make the difference the future needs."),
-                  Page(imageName: "logo", headerText: "Along The Way", bodyText: "Don't forget to stop and smell the roses.")]
+    let pages = [ Page(imageName: "logo", headerText: "Welcome", bodyText: "Stay informed, and become the world's ", emphasisText: "saving grace."),
+                  Page(imageName: "logo", headerText: "All For One", bodyText: "Your thoughts, voice and actions will make the difference the ", emphasisText: "future needs."),
+                  Page(imageName: "logo", headerText: "Along The Way", bodyText: "Don't forget to stop and smell the ", emphasisText: "roses.")]
     
+    // Not using previous button anymore
     let previousButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("PREV", for: .normal)
@@ -24,6 +25,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         return button
     }()
     
+    // Deprecated method since not using this button anymore
     @objc private func handlePrev() {
         let nextIndex = max(pageControl.currentPage - 1, 0)
         let indexPath = IndexPath(item: nextIndex, section: 0)
@@ -43,6 +45,21 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         return button
     }()
     
+    let doneButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Done", for: .normal)
+        button.titleLabel?.font = UIFont.robotoBold(size: 14)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor.mainPink
+        button.layer.cornerRadius = 16
+        button.clipsToBounds = true
+        
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        
+        return button
+    }()
+    
     @objc private func handleNext() {
         let nextIndex = min(pageControl.currentPage + 1, pages.count - 1)
         let indexPath = IndexPath(item: nextIndex, section: 0)
@@ -56,21 +73,21 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         pc.currentPage = 0
         pc.numberOfPages = pages.count
         pc.currentPageIndicatorTintColor = .mainPink
-        pc.pageIndicatorTintColor = .lightPink
+        pc.pageIndicatorTintColor = .mainOrange
         return pc
     }()
     
     func setupBottomControls() {
-        let bottomControlsStackView = UIStackView(arrangedSubviews: [previousButton, pageControl, nextButton])
+        let bottomControlsStackView = UIStackView(arrangedSubviews: [pageControl, doneButton])
         view.addSubview(bottomControlsStackView)
         
         bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
-        bottomControlsStackView.distribution = .fillEqually
+        bottomControlsStackView.distribution = .equalSpacing
         
         NSLayoutConstraint.activate([
             bottomControlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
+            bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40),
             bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50)
         ])
     }

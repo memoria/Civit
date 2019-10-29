@@ -9,6 +9,10 @@
 import UIKit
 
 extension UIColor {
-  static var mainPink = UIColor(red: 237/255, green: 112/255, blue: 101/255, alpha: 1)
-  static var lightPink = UIColor(red: 249/255, green: 207/255, blue: 244/255, alpha: 1)
+    // Primary colors
+    static var mainPink = UIColor(red: 237/255, green: 112/255, blue: 101/255, alpha: 1)
+    static var mainOrange = UIColor(red: 251/255, green: 205/255, blue: 127/255, alpha: 1)
+    
+    // Secondary colors
+    static var lightPink = UIColor(red: 249/255, green: 207/255, blue: 244/255, alpha: 1)
 }
