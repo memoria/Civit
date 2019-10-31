@@ -12,7 +12,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     let pages = [ Page(imageName: "logo", headerText: "Welcome", bodyText: "Stay informed, and become the world's ", emphasisText: "saving grace."),
                   Page(imageName: "logo", headerText: "All For One", bodyText: "Your thoughts, voice and actions will make the difference the ", emphasisText: "future needs."),
                   Page(imageName: "logo", headerText: "Along The Way", bodyText: "Don't forget to stop and smell the ", emphasisText: "roses.")]
-    
+
     // Not using previous button anymore
     let previousButton: UIButton = {
         let button = UIButton(type: .system)
@@ -38,7 +38,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("NEXT", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.titleLabel?.font = UIFont.robotoMedium(size: 14)
         button.setTitleColor(.mainPink, for: .normal)
         button.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
         
@@ -49,11 +49,12 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Done", for: .normal)
-        button.titleLabel?.font = UIFont.robotoBold(size: 14)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor.mainPink
-        button.layer.cornerRadius = 16
+        button.titleLabel?.font = UIFont.robotoBold(size: 16)
+        button.setTitleColor(UIColor.mainPink, for: .normal)
+        button.layer.cornerRadius = 24
         button.clipsToBounds = true
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.mainPink.cgColor
         
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         
@@ -78,7 +79,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     }()
     
     func setupBottomControls() {
-        let bottomControlsStackView = UIStackView(arrangedSubviews: [pageControl, doneButton])
+        let bottomControlsStackView = UIStackView(arrangedSubviews: [pageControl, nextButton])
         view.addSubview(bottomControlsStackView)
         
         bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
