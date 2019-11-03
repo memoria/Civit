@@ -17,6 +17,7 @@
 		962CFB54235E86B200715378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962CFB52235E86B200715378 /* Main.storyboard */; };
 		962CFB56235E86B300715378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962CFB55235E86B300715378 /* Assets.xcassets */; };
 		962CFB59235E86B300715378 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962CFB57235E86B300715378 /* LaunchScreen.storyboard */; };
+		969C1E37236F0E5F00EACD2D /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C1E36236F0E5F00EACD2D /* BaseTabBarController.swift */; };
 		96BA6BB923670599001A1112 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96BA6BAD23670598001A1112 /* Roboto-MediumItalic.ttf */; };
 		96BA6BBA23670599001A1112 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96BA6BAE23670598001A1112 /* Roboto-Medium.ttf */; };
 		96BA6BBB23670599001A1112 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96BA6BAF23670598001A1112 /* Roboto-Bold.ttf */; };
@@ -45,6 +46,7 @@
 		962CFB55235E86B300715378 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		962CFB58235E86B300715378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		962CFB5A235E86B300715378 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		969C1E36236F0E5F00EACD2D /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		96BA6BAD23670598001A1112 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		96BA6BAE23670598001A1112 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		96BA6BAF23670598001A1112 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0DFA0C812361294100189515 /* SwipingController.swift */,
+				969C1E36236F0E5F00EACD2D /* BaseTabBarController.swift */,
 			);
 			path = VIewModel;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			files = (
 				96BA6BC623670CF1001A1112 /* fonts.swift in Sources */,
 				0DFA0C822361294100189515 /* SwipingController.swift in Sources */,
+				969C1E37236F0E5F00EACD2D /* BaseTabBarController.swift in Sources */,
 				0DFA0C842362225F00189515 /* PageCell.swift in Sources */,
 				0DB87D3B2364DF7800059DC8 /* colors.swift in Sources */,
 				0DB87D362364B52500059DC8 /* Page.swift in Sources */,

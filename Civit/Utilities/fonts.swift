@@ -54,6 +54,10 @@ extension UIFont {
         return UIFont(name: "Roboto-Black", size: size)!
     }
     
+    class func robotoBlackWithText (size: CGFloat, text: String) -> UIFont {
+        return UIFont(name: "Roboto-Black", size: size)!
+    }
+    
     class func robotoBlackItalic (size: CGFloat) -> UIFont {
         return UIFont(name: "Roboto-BlackItalic", size: size)!
     }
