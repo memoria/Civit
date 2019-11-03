@@ -24,7 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let swipingController = SwipingController(collectionViewLayout: layout)
         
         window?.windowScene = windowScene
-        window?.rootViewController = swipingController
+//        window?.rootViewController = swipingController
+        window?.rootViewController = BaseTabBarController()
         window?.makeKeyAndVisible()
     }
 
