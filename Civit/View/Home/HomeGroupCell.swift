@@ -11,18 +11,17 @@ import UIKit
 class HomeGroupCell: UICollectionViewCell {
     let titleLabel = UILabel(text: "App Section", font: .boldSystemFont(ofSize: 30))
     
+    // Mark: Horizontal Colleciton Controller
+    let horizontalController = HomeHorizontalController()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .darkGray
-        
-        // Mark: Horizontal Colleciton Controller
-        let horizontalController = HomeHorizontalController()
         
         addSubview(titleLabel)
         titleLabel.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor)
         
         addSubview(horizontalController.view)
-        horizontalController.view.backgroundColor = .blue
         horizontalController.view.anchor(top: titleLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
     }
     
