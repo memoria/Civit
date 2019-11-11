@@ -17,7 +17,7 @@ class HomeHeaderCell: UICollectionViewCell {
         super.init(frame: frame)
         
         // Mark:
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = .purple
         titleLabel.numberOfLines = 2
         companyLabel.textColor = .blue
         let stackView = VerticalStackView(arrangedSubViews: [companyLabel, titleLabel, imageView], spacing: 12)
