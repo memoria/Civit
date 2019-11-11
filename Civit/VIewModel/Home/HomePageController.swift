@@ -19,6 +19,22 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
         collectionView.register(HomeGroupCell.self, forCellWithReuseIdentifier: cellId)
         
         collectionView.register(HomePageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        
+        fetchData()
+    }
+    
+    fileprivate func fetchData() {
+        print("Fetching JSON data")
+        APIService.shared.fetchGames { (homeGroup, err) in
+            if let err = err {
+                print ("Failed to fetch games: ", err)
+                return
+            }
+            
+            guard let homeGroupResults = homeGroup else { return }
+            print(homeGroupResults.feed.results)
+//            print(homeGroup?.feed.results)
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
