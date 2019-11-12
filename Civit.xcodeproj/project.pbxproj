@@ -11,6 +11,7 @@
 		0DB87D3B2364DF7800059DC8 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB87D3A2364DF7800059DC8 /* colors.swift */; };
 		0DFA0C822361294100189515 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA0C812361294100189515 /* SwipingController.swift */; };
 		0DFA0C842362225F00189515 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA0C832362225F00189515 /* PageCell.swift */; };
+		7E9EA3A91B0B31B2F73C544A /* Pods_Civit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B822AAE48068FD9FADB21A5 /* Pods_Civit.framework */; };
 		9606255223783C1C00D1C807 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606255123783C1C00D1C807 /* HomePageController.swift */; };
 		9606255423783DA200D1C807 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606255323783DA200D1C807 /* BaseListController.swift */; };
 		9606255723783FC400D1C807 /* HomeGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606255623783FC400D1C807 /* HomeGroupCell.swift */; };
@@ -51,6 +52,8 @@
 		0DB87D3A2364DF7800059DC8 /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		0DFA0C812361294100189515 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		0DFA0C832362225F00189515 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		4B822AAE48068FD9FADB21A5 /* Pods_Civit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Civit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75AFFC14D5D30D5491ABEDBE /* Pods-Civit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Civit.release.xcconfig"; path = "Target Support Files/Pods-Civit/Pods-Civit.release.xcconfig"; sourceTree = "<group>"; };
 		9606255123783C1C00D1C807 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		9606255323783DA200D1C807 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		9606255623783FC400D1C807 /* HomeGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGroupCell.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		96BA6BB823670599001A1112 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		96BA6BC523670CF1001A1112 /* fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fonts.swift; sourceTree = "<group>"; };
 		96CC45BF2378A0EF0042F3C8 /* HomeHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHorizontalController.swift; sourceTree = "<group>"; };
+		CBCFB16769E07DBEA0B2592F /* Pods-Civit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Civit.debug.xcconfig"; path = "Target Support Files/Pods-Civit/Pods-Civit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E9EA3A91B0B31B2F73C544A /* Pods_Civit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +145,24 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		2F4477484F286979EBA93E3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B822AAE48068FD9FADB21A5 /* Pods_Civit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3047EBB90BA24F76E23206F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBCFB16769E07DBEA0B2592F /* Pods-Civit.debug.xcconfig */,
+				75AFFC14D5D30D5491ABEDBE /* Pods-Civit.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9606255023783BFC00D1C807 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +199,8 @@
 			children = (
 				962CFB4B235E86B200715378 /* Civit */,
 				962CFB4A235E86B200715378 /* Products */,
+				3047EBB90BA24F76E23206F5 /* Pods */,
+				2F4477484F286979EBA93E3D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 962CFB5D235E86B300715378 /* Build configuration list for PBXNativeTarget "Civit" */;
 			buildPhases = (
+				E723AD572E5C3FABEF9A02EB /* [CP] Check Pods Manifest.lock */,
 				962CFB45235E86B200715378 /* Sources */,
 				962CFB46235E86B200715378 /* Frameworks */,
 				962CFB47235E86B200715378 /* Resources */,
+				B338145D5ADCDD0832FC9BB0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,6 +337,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B338145D5ADCDD0832FC9BB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Civit/Pods-Civit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Civit/Pods-Civit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Civit/Pods-Civit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E723AD572E5C3FABEF9A02EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Civit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		962CFB45235E86B200715378 /* Sources */ = {
@@ -479,6 +548,7 @@
 		};
 		962CFB5E235E86B300715378 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBCFB16769E07DBEA0B2592F /* Pods-Civit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -497,6 +567,7 @@
 		};
 		962CFB5F235E86B300715378 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75AFFC14D5D30D5491ABEDBE /* Pods-Civit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
