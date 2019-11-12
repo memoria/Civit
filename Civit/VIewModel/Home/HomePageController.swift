@@ -23,8 +23,9 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
         fetchData()
     }
     
+    var editorsChoiceGames: HomeGroup?
+    
     fileprivate func fetchData() {
-        print("Fetching JSON data")
         APIService.shared.fetchGames { (homeGroup, err) in
             if let err = err {
                 print ("Failed to fetch games: ", err)
@@ -32,8 +33,12 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
             }
             
             guard let homeGroupResults = homeGroup else { return }
-            print(homeGroupResults.feed.results)
-//            print(homeGroup?.feed.results)
+            self.editorsChoiceGames = homeGroupResults
+            
+            // Must reload collection view to use this data
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
     
@@ -47,11 +52,15 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeGroupCell
+        cell.titleLabel.text = editorsChoiceGames?.feed.title
+        cell.horizontalController.homeGroup = editorsChoiceGames
+        cell.horizontalController.collectionView.reloadData()
+        
         return cell
     }
     
