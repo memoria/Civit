@@ -23,22 +23,58 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
         fetchData()
     }
     
-    var editorsChoiceGames: HomeGroup?
+    var groups = [HomeGroup]()
     
     fileprivate func fetchData() {
+        let dispatchGroup = DispatchGroup()
+        
+        var group1: HomeGroup?
+        var group2: HomeGroup?
+        var group3: HomeGroup?
+      
+        dispatchGroup.enter()
         APIService.shared.fetchGames { (homeGroup, err) in
+            dispatchGroup.leave()
+            if let err = err {
+                print ("Failed to fetch games: ", err)
+                return
+            }
+
+            group1 = homeGroup
+        }
+        
+        dispatchGroup.enter()
+        APIService.shared.fetchTopGrossing { (homeGroup, err) in
+            dispatchGroup.leave()
+            if let err = err {
+                print ("Failed to fetch games: ", err)
+                return
+            }
+           group2 = homeGroup
+        }
+        
+        
+        dispatchGroup.enter()
+        APIService.shared.fetchFreeApps { (homeGroup, err) in
+            dispatchGroup.leave()
+            
             if let err = err {
                 print ("Failed to fetch games: ", err)
                 return
             }
             
-            guard let homeGroupResults = homeGroup else { return }
-            self.editorsChoiceGames = homeGroupResults
+            group3 = homeGroup
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            print("Completed dispatch task ")
             
-            // Must reload collection view to use this data
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+            guard let games = group1 else { return }
+            guard let topGrossing = group2 else { return }
+            guard let freeApps = group3 else { return }
+            
+            self.groups.append(contentsOf: [games, topGrossing, freeApps])
+            self.collectionView.reloadData()
         }
     }
     
@@ -52,13 +88,15 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return groups.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeGroupCell
-        cell.titleLabel.text = editorsChoiceGames?.feed.title
-        cell.horizontalController.homeGroup = editorsChoiceGames
+        let appGroup = groups[indexPath.item]
+        
+        cell.titleLabel.text = appGroup.feed.title
+        cell.horizontalController.homeGroup = appGroup
         cell.horizontalController.collectionView.reloadData()
         
         return cell
