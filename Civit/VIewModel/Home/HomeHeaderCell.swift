@@ -10,7 +10,7 @@ import UIKit
 
 class HomeHeaderCell: UICollectionViewCell {
     let companyLabel = UILabel(text: "Company", font: .boldSystemFont(ofSize: 12))
-    let titleLabel = UILabel(text: "News story headline here", font: .systemFont(ofSize: 24))
+    let titleLabel = UILabel(text: "News story headline here", font: .systemFont(ofSize: 18))
     let imageView = UIImageView(cornerRadius: 8)
     
     override init(frame: CGRect) {
@@ -18,7 +18,7 @@ class HomeHeaderCell: UICollectionViewCell {
         
         // Mark:
         imageView.backgroundColor = .purple
-        titleLabel.numberOfLines = 2
+        titleLabel.numberOfLines = 1
         companyLabel.textColor = .blue
         let stackView = VerticalStackView(arrangedSubViews: [companyLabel, titleLabel, imageView], spacing: 12)
         addSubview(stackView)

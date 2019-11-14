@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,7 @@
 		964C78D723797CDA0087969B /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C78D623797CDA0087969B /* HomeHeaderCell.swift */; };
 		964C78DC2379879C0087969B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C78DB2379879C0087969B /* APIService.swift */; };
 		964C78DE237989250087969B /* HomeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C78DD237989250087969B /* HomeGroup.swift */; };
+		9688D4A8237C1D9700E2E577 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688D4A7237C1D9700E2E577 /* SocialApp.swift */; };
 		969C1E37236F0E5F00EACD2D /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C1E36236F0E5F00EACD2D /* BaseTabBarController.swift */; };
 		96BA6BB923670599001A1112 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96BA6BAD23670598001A1112 /* Roboto-MediumItalic.ttf */; };
 		96BA6BBA23670599001A1112 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96BA6BAE23670598001A1112 /* Roboto-Medium.ttf */; };
@@ -74,6 +75,7 @@
 		964C78D623797CDA0087969B /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
 		964C78DB2379879C0087969B /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		964C78DD237989250087969B /* HomeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGroup.swift; sourceTree = "<group>"; };
+		9688D4A7237C1D9700E2E577 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		969C1E36236F0E5F00EACD2D /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		96BA6BAD23670598001A1112 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		96BA6BAE23670598001A1112 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				0DB87D352364B52500059DC8 /* Page.swift */,
 				964C78DD237989250087969B /* HomeGroup.swift */,
+				9688D4A7237C1D9700E2E577 /* SocialApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,7 +162,6 @@
 				CBCFB16769E07DBEA0B2592F /* Pods-Civit.debug.xcconfig */,
 				75AFFC14D5D30D5491ABEDBE /* Pods-Civit.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -385,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9688D4A8237C1D9700E2E577 /* SocialApp.swift in Sources */,
 				964C78D3237972010087969B /* HomePageHeader.swift in Sources */,
 				964C78DC2379879C0087969B /* APIService.swift in Sources */,
 				96CC45C02378A0EF0042F3C8 /* HomeHorizontalController.swift in Sources */,
