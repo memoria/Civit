@@ -28,8 +28,8 @@
 		964C78D3237972010087969B /* HomePageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C78D2237972010087969B /* HomePageHeader.swift */; };
 		964C78D523797AFE0087969B /* HomeHeaderHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C78D423797AFE0087969B /* HomeHeaderHorizontalController.swift */; };
 		964C78D723797CDA0087969B /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C78D623797CDA0087969B /* HomeHeaderCell.swift */; };
-		964C78DC2379879C0087969B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C78DB2379879C0087969B /* APIService.swift */; };
 		964C78DE237989250087969B /* HomeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C78DD237989250087969B /* HomeGroup.swift */; };
+		966FB973237D735000370940 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FB972237D735000370940 /* APIService.swift */; };
 		9688D4A8237C1D9700E2E577 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688D4A7237C1D9700E2E577 /* SocialApp.swift */; };
 		969C1E37236F0E5F00EACD2D /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C1E36236F0E5F00EACD2D /* BaseTabBarController.swift */; };
 		96BA6BB923670599001A1112 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96BA6BAD23670598001A1112 /* Roboto-MediumItalic.ttf */; };
@@ -73,8 +73,8 @@
 		964C78D2237972010087969B /* HomePageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageHeader.swift; sourceTree = "<group>"; };
 		964C78D423797AFE0087969B /* HomeHeaderHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderHorizontalController.swift; sourceTree = "<group>"; };
 		964C78D623797CDA0087969B /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
-		964C78DB2379879C0087969B /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		964C78DD237989250087969B /* HomeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGroup.swift; sourceTree = "<group>"; };
+		966FB972237D735000370940 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		9688D4A7237C1D9700E2E577 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		969C1E36236F0E5F00EACD2D /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		96BA6BAD23670598001A1112 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -139,7 +139,6 @@
 		0DB87D392364DF6700059DC8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				964C78DA2379879C0087969B /* Service */,
 				9606255C23784D1200D1C807 /* Helpers */,
 				96BA6BAC23670585001A1112 /* Resources */,
 				0DB87D3A2364DF7800059DC8 /* colors.swift */,
@@ -217,6 +216,7 @@
 		962CFB4B235E86B200715378 /* Civit */ = {
 			isa = PBXGroup;
 			children = (
+				966FB971237D734400370940 /* Service */,
 				0DB87D392364DF6700059DC8 /* Utilities */,
 				0DB87D382364DC0D00059DC8 /* View */,
 				0DB87D372364D9EA00059DC8 /* VIewModel */,
@@ -232,13 +232,12 @@
 			path = Civit;
 			sourceTree = "<group>";
 		};
-		964C78DA2379879C0087969B /* Service */ = {
+		966FB971237D734400370940 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				964C78DB2379879C0087969B /* APIService.swift */,
+				966FB972237D735000370940 /* APIService.swift */,
 			);
-			name = Service;
-			path = ../../../appstore/appstore/Service;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		96BA6BAC23670585001A1112 /* Resources */ = {
@@ -389,7 +388,6 @@
 			files = (
 				9688D4A8237C1D9700E2E577 /* SocialApp.swift in Sources */,
 				964C78D3237972010087969B /* HomePageHeader.swift in Sources */,
-				964C78DC2379879C0087969B /* APIService.swift in Sources */,
 				96CC45C02378A0EF0042F3C8 /* HomeHorizontalController.swift in Sources */,
 				964C78D523797AFE0087969B /* HomeHeaderHorizontalController.swift in Sources */,
 				96BA6BC623670CF1001A1112 /* fonts.swift in Sources */,
@@ -406,6 +404,7 @@
 				9606256023784D1200D1C807 /* Extensions.swift in Sources */,
 				964C78DE237989250087969B /* HomeGroup.swift in Sources */,
 				0DB87D362364B52500059DC8 /* Page.swift in Sources */,
+				966FB973237D735000370940 /* APIService.swift in Sources */,
 				962CFB51235E86B200715378 /* ViewController.swift in Sources */,
 				962CFB4D235E86B200715378 /* AppDelegate.swift in Sources */,
 				9606256123784D1200D1C807 /* UIView+Layout.swift in Sources */,
