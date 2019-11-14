@@ -32,6 +32,8 @@ class HomeHorizontalController: BaseListController, UICollectionViewDelegateFlow
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeRowCell
         let results = homeGroup?.feed.results[indexPath.item]
+        cell.companyLabel.text = results?.artistName
+        cell.nameLabel.text = results?.name
         cell.imageView.sd_setImage(with: URL(string: results?.artworkUrl100 ?? ""))
         return cell
     }
