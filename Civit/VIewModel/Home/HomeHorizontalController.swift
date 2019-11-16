@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class HomeHorizontalController: BaseListController, UICollectionViewDelegateFlowLayout {
+class HomeHorizontalController: HorizontalSnappingController, UICollectionViewDelegateFlowLayout {
     let cellId = "cellId"
     let topBottomPadding: CGFloat = 12
     let lineSpacing: CGFloat = 10
@@ -20,9 +20,7 @@ class HomeHorizontalController: BaseListController, UICollectionViewDelegateFlow
         
         collectionView.backgroundColor = .white
         collectionView.register(HomeRowCell.self, forCellWithReuseIdentifier: cellId)
-        
-        guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else { return }
-        layout.scrollDirection = .horizontal
+        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -48,6 +46,6 @@ class HomeHorizontalController: BaseListController, UICollectionViewDelegateFlow
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: topBottomPadding, left: 16, bottom: topBottomPadding, right: 16)
+        return .init(top: topBottomPadding, left: 0, bottom: topBottomPadding, right: 0)
     }
 }
