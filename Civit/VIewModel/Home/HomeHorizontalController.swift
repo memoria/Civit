@@ -5,6 +5,7 @@
 //  Created by Nishant Patel on 11/10/19.
 //  Copyright © 2019 nishant. All rights reserved.
 //
+//  This collectionView is responsible for the horizontally scrolling cell under the header
 
 import UIKit
 import SDWebImage
@@ -14,6 +15,7 @@ class HomeHorizontalController: HorizontalSnappingController, UICollectionViewDe
     let topBottomPadding: CGFloat = 12
     let lineSpacing: CGFloat = 10
     var homeGroup: HomeGroup?
+    var didSelectHandler: ((FeedResult) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,5 +49,11 @@ class HomeHorizontalController: HorizontalSnappingController, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: topBottomPadding, left: 0, bottom: topBottomPadding, right: 0)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let app = homeGroup?.feed.results[indexPath.item]
+        didSelectHandler?(app!)
+        print(app?.name)
     }
 }
