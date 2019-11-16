@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeHeaderHorizontalController: BaseListController, UICollectionViewDelegateFlowLayout {
+class HomeHeaderHorizontalController: HorizontalSnappingController, UICollectionViewDelegateFlowLayout {
     let cellId = "cellId"
     var socialApps = [SocialApp]()
     
@@ -21,6 +21,7 @@ class HomeHeaderHorizontalController: BaseListController, UICollectionViewDelega
         // Mark: Horizontal scrolling
         guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else { return }
         layout.scrollDirection = .horizontal
+        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
