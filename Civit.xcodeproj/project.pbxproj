@@ -34,6 +34,7 @@
 		969C1E37236F0E5F00EACD2D /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C1E36236F0E5F00EACD2D /* BaseTabBarController.swift */; };
 		96B8A5AC238057B0004468AB /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B8A5AB238057B0004468AB /* HorizontalSnappingController.swift */; };
 		96B8A5AE238060C3004468AB /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B8A5AD238060C3004468AB /* BetterSnappingLayout.swift */; };
+		96B8A5B123809589004468AB /* ArticleDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B8A5B023809589004468AB /* ArticleDetailsController.swift */; };
 		96BA6BB923670599001A1112 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96BA6BAD23670598001A1112 /* Roboto-MediumItalic.ttf */; };
 		96BA6BBA23670599001A1112 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96BA6BAE23670598001A1112 /* Roboto-Medium.ttf */; };
 		96BA6BBB23670599001A1112 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96BA6BAF23670598001A1112 /* Roboto-Bold.ttf */; };
@@ -81,6 +82,7 @@
 		969C1E36236F0E5F00EACD2D /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		96B8A5AB238057B0004468AB /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
 		96B8A5AD238060C3004468AB /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
+		96B8A5B023809589004468AB /* ArticleDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsController.swift; sourceTree = "<group>"; };
 		96BA6BAD23670598001A1112 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		96BA6BAE23670598001A1112 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		96BA6BAF23670598001A1112 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		9606255023783BFC00D1C807 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				96B8A5AF23809515004468AB /* ArticleDetails */,
 				9606255123783C1C00D1C807 /* HomePageController.swift */,
 				96CC45BF2378A0EF0042F3C8 /* HomeHorizontalController.swift */,
 				964C78D423797AFE0087969B /* HomeHeaderHorizontalController.swift */,
@@ -244,6 +247,14 @@
 				966FB972237D735000370940 /* APIService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		96B8A5AF23809515004468AB /* ArticleDetails */ = {
+			isa = PBXGroup;
+			children = (
+				96B8A5B023809589004468AB /* ArticleDetailsController.swift */,
+			);
+			path = ArticleDetails;
 			sourceTree = "<group>";
 		};
 		96BA6BAC23670585001A1112 /* Resources */ = {
@@ -403,6 +414,7 @@
 				0DFA0C842362225F00189515 /* PageCell.swift in Sources */,
 				9606256223784D1200D1C807 /* VerticalStackView.swift in Sources */,
 				9606255723783FC400D1C807 /* HomeGroupCell.swift in Sources */,
+				96B8A5B123809589004468AB /* ArticleDetailsController.swift in Sources */,
 				9606255223783C1C00D1C807 /* HomePageController.swift in Sources */,
 				96B8A5AE238060C3004468AB /* BetterSnappingLayout.swift in Sources */,
 				9606255423783DA200D1C807 /* BaseListController.swift in Sources */,

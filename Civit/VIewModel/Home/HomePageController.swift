@@ -124,6 +124,12 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
         cell.horizontalController.homeGroup = appGroup
         cell.horizontalController.collectionView.reloadData()
         
+        cell.horizontalController.didSelectHandler = { [weak self] feedResult in
+            let ArticleController = ArticleDetailsController()
+            ArticleController.title = feedResult.name
+            self?.navigationController?.pushViewController(ArticleController, animated: true)
+        }
+        
         return cell
     }
     
@@ -134,6 +140,13 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 16, left: 0, bottom: 0, right: 0)
+    }
+    
+    // This allows for the category label to be selectable, and you push a new viewController. Good candidate for a See All
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let redViewController = UIViewController()
+        redViewController.view.backgroundColor = .red
+        navigationController?.pushViewController(redViewController, animated: true)
     }
     
 }
