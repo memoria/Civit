@@ -51,6 +51,8 @@
 		96CC45C02378A0EF0042F3C8 /* HomeHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC45BF2378A0EF0042F3C8 /* HomeHorizontalController.swift */; };
 		96D4CD392381D794007BBA91 /* KeyPlayersControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4CD382381D794007BBA91 /* KeyPlayersControler.swift */; };
 		96D4CD3C2381D8CE007BBA91 /* KeyPlayersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4CD3B2381D8CE007BBA91 /* KeyPlayersCell.swift */; };
+		96D4CD402381F06F007BBA91 /* KeyPlayersFullScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4CD3F2381F06F007BBA91 /* KeyPlayersFullScreenController.swift */; };
+		96D4CD422381FEE3007BBA91 /* KeyPlayersFullScreenDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4CD412381FEE3007BBA91 /* KeyPlayersFullScreenDescriptionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +103,8 @@
 		96CC45BF2378A0EF0042F3C8 /* HomeHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHorizontalController.swift; sourceTree = "<group>"; };
 		96D4CD382381D794007BBA91 /* KeyPlayersControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPlayersControler.swift; sourceTree = "<group>"; };
 		96D4CD3B2381D8CE007BBA91 /* KeyPlayersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPlayersCell.swift; sourceTree = "<group>"; };
+		96D4CD3F2381F06F007BBA91 /* KeyPlayersFullScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPlayersFullScreenController.swift; sourceTree = "<group>"; };
+		96D4CD412381FEE3007BBA91 /* KeyPlayersFullScreenDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPlayersFullScreenDescriptionCell.swift; sourceTree = "<group>"; };
 		CBCFB16769E07DBEA0B2592F /* Pods-Civit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Civit.debug.xcconfig"; path = "Target Support Files/Pods-Civit/Pods-Civit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -286,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				96D4CD382381D794007BBA91 /* KeyPlayersControler.swift */,
+				96D4CD3F2381F06F007BBA91 /* KeyPlayersFullScreenController.swift */,
 			);
 			path = KeyPlayers;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				96D4CD3B2381D8CE007BBA91 /* KeyPlayersCell.swift */,
+				96D4CD412381FEE3007BBA91 /* KeyPlayersFullScreenDescriptionCell.swift */,
 			);
 			path = KeyPlayers;
 			sourceTree = "<group>";
@@ -425,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D4CD402381F06F007BBA91 /* KeyPlayersFullScreenController.swift in Sources */,
 				9688D4A8237C1D9700E2E577 /* SocialApp.swift in Sources */,
 				964C78D3237972010087969B /* HomePageHeader.swift in Sources */,
 				96CC45C02378A0EF0042F3C8 /* HomeHorizontalController.swift in Sources */,
@@ -440,6 +447,7 @@
 				96B8A5B123809589004468AB /* ArticleDetailsController.swift in Sources */,
 				9606255223783C1C00D1C807 /* HomePageController.swift in Sources */,
 				96B8A5AE238060C3004468AB /* BetterSnappingLayout.swift in Sources */,
+				96D4CD422381FEE3007BBA91 /* KeyPlayersFullScreenDescriptionCell.swift in Sources */,
 				9606255423783DA200D1C807 /* BaseListController.swift in Sources */,
 				0DB87D3B2364DF7800059DC8 /* colors.swift in Sources */,
 				964C78D723797CDA0087969B /* HomeHeaderCell.swift in Sources */,
