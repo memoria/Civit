@@ -13,7 +13,7 @@ class HomeRowCell: UICollectionViewCell {
     let companyLabel = UILabel(text: "Company name", font: .systemFont(ofSize: 16))
     
     let imageView = UIImageView(cornerRadius: 8)
-    let getButton = UIButton(title: "GET")
+    let getButton = UIButton(title: "View")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,8 +23,9 @@ class HomeRowCell: UICollectionViewCell {
         imageView.widthAnchor.constraint(equalToConstant: 64).isActive = true
         imageView.constrainHeight(constant: 64)
         
-        getButton.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        getButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        getButton.backgroundColor = .mainOrange
+        getButton.setTitleColor(.white, for: .normal)
+        getButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         getButton.constrainHeight(constant: 32)
         getButton.layer.cornerRadius = 16
         getButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
