@@ -12,22 +12,23 @@ class APIService {
     static let shared = APIService() // singleton
     
     func fetchGames(completion: @escaping (HomeGroup?, Error?) -> ()) {
-        let urlString = "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-games-we-love/all/10/explicit.json"
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/climateChange.json?alt=media&token=11a81f31-ec5f-4a9d-9148-fe186856eca6"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
     func fetchTopGrossing(completion: @escaping (HomeGroup?, Error?) -> ()) {
-        let urlString = "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-grossing-ipad/all/25/explicit.json"
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/policyRegulations.json?alt=media&token=fd204143-a957-43b9-905f-19ac231033c0"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
     func fetchFreeApps(completion: @escaping (HomeGroup?, Error?) -> ()) {
-        let urlString = "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/25/explicit.json"
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/horizontalCellsData.json?alt=media&token=5ccabb62-d7b8-4cb2-bb47-57e225f7263c"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
     func fetchSocialApps(completion: @escaping ([SocialApp]?, Error?) -> Void) {
-        let urlString = "https://api.letsbuildthatapp.com/appstore/social"
+//        let urlString = "https://api.letsbuildthatapp.com/appstore/social"
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/header.json?alt=media&token=03e821a3-db88-4484-b921-e34a3423abdf"
        fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
