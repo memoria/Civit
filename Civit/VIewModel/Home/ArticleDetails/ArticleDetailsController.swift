@@ -12,6 +12,7 @@ class ArticleDetailsController: BaseListController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.backgroundColor = .yellow
+        guard let url = URL(string: "https://stackoverflow.com") else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

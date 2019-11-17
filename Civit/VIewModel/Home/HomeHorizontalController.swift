@@ -53,6 +53,10 @@ class HomeHorizontalController: HorizontalSnappingController, UICollectionViewDe
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let app = homeGroup?.feed.results[indexPath.item]
+        
+        
+        guard let url = URL(string: "https://stackoverflow.com") else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
         didSelectHandler?(app!)
         print(app?.name)
     }
