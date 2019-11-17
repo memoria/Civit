@@ -10,6 +10,7 @@ import UIKit
 
 class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayout {
     let cellId = "cellId"
+    var startingFrame: CGRect?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,34 @@ class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayo
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Animate this guy fullscreen soon.")
+        
+        let redView = UIView()
+        redView.backgroundColor = .darkGray
+        redView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRemoveRedView)))
+        view.addSubview(redView)
+        redView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        print(cell.frame)
+        
+        guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
+        self.startingFrame = startingFrame
+        
+        redView.frame = startingFrame
+        
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseInOut, animations: {
+            redView.frame = self.view.frame
+        }, completion: nil)
+        
+        redView.layer.cornerRadius = 16
+    }
+    
+    @objc func handleRemoveRedView(gesture: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseInOut, animations: {
+            gesture.view?.frame = self.startingFrame ?? .zero
+        }, completion: { _ in
+            gesture.view?.removeFromSuperview()
+        })
     }
     
 }
