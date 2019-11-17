@@ -19,7 +19,7 @@ class HomeHeaderCell: UICollectionViewCell {
         // Mark:
         imageView.backgroundColor = .purple
         titleLabel.numberOfLines = 1
-        companyLabel.textColor = .blue
+        companyLabel.textColor = .mainPink
         let stackView = VerticalStackView(arrangedSubViews: [companyLabel, titleLabel, imageView], spacing: 12)
         addSubview(stackView)
         stackView.fillSuperview(padding: .init(top: 16, left: 0, bottom: 0, right: 0))
