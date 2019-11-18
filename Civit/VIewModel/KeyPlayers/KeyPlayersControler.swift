@@ -11,7 +11,12 @@ import UIKit
 class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayout {
     let cellId = "cellId"
     var startingFrame: CGRect?
-    var keyPlayersFullScreenController: UIViewController!
+    var keyPlayersFullScreenController: KeyPlayersFullScreenController!
+    
+    var topConstraint: NSLayoutConstraint?
+    var leadingConstraint: NSLayoutConstraint?
+    var widthConstraint: NSLayoutConstraint?
+    var heightConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,19 +63,38 @@ class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayo
         
         guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
         self.startingFrame = startingFrame
-        redView.frame = startingFrame
+//        redView.frame = startingFrame
+        redView.translatesAutoresizingMaskIntoConstraints = false
+        topConstraint = redView.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y)
+        leadingConstraint = redView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x)
+        widthConstraint = redView.widthAnchor.constraint(equalToConstant: startingFrame.width)
+        heightConstraint = redView.heightAnchor.constraint(equalToConstant: startingFrame.height)
+        [topConstraint, leadingConstraint, widthConstraint, heightConstraint].forEach{($0?.isActive = true)}
+        self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseInOut, animations: {
-            redView.frame = self.view.frame
-//            self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
+            self.topConstraint?.constant = 0
+            self.leadingConstraint?.constant = 0
+            self.widthConstraint?.constant = self.view.frame.width
+            self.heightConstraint?.constant = self.view.frame.height
+            self.view.layoutIfNeeded()
             self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height
         }, completion: nil)
     }
     
     @objc func handleRemoveRedView(gesture: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseInOut, animations: {
-            gesture.view?.frame = self.startingFrame ?? .zero
-//            self.tabBarController?.tabBar.transform = .identity
+//            gesture.view?.frame = self.startingFrame ?? .zero
+            self.keyPlayersFullScreenController.tableView.contentOffset = .zero
+            self.keyPlayersFullScreenController.tableView.scrollsToTop = true
+            guard let startingFrame = self.startingFrame else { return }
+            
+            self.topConstraint?.constant = startingFrame.origin.y
+            self.leadingConstraint?.constant = startingFrame.origin.x
+            self.widthConstraint?.constant = startingFrame.width
+            self.heightConstraint?.constant = startingFrame.height
+            self.view.layoutIfNeeded()
+            
             if let tabBarFrame = self.tabBarController?.tabBar.frame {
                 self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height - tabBarFrame.height
             }

@@ -22,11 +22,7 @@ class KeyPlayersFullScreenController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.item == 0 {
-            let cell = UITableViewCell()
-            let keyPlayerCell = KeyPlayersCell()
-            cell.addSubview(keyPlayerCell)
-            keyPlayerCell.centerInSuperview(size: .init(width: 250, height: 250))
-            return cell
+            return KeyPlayerFullScreenHeaderCell()
         }
         
         let cell = KeyPlayersFullScreenDescriptionCell()
@@ -35,15 +31,9 @@ class KeyPlayersFullScreenController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 450
+        if indexPath.row == 0 {
+            return 450
+        }
+        return super.tableView(tableView, heightForRowAt: indexPath)
     }
-    
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header = KeyPlayersCell()
-//        return header
-//    }
-//
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 450
-//    }
 }
