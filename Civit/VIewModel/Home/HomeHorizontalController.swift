@@ -55,7 +55,7 @@ class HomeHorizontalController: HorizontalSnappingController, UICollectionViewDe
         let app = homeGroup?.feed.results[indexPath.item]
         
         
-        guard let url = URL(string: "https://stackoverflow.com") else { return }
+        guard let url = URL(string: "https://ign.com") else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
         didSelectHandler?(app!)
         print(app?.name)

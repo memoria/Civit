@@ -13,4 +13,5 @@ struct SocialApp: Decodable {
     let name: String
     let imageUrl: String
     let tagline: String
+    let articleLink: String
 }
