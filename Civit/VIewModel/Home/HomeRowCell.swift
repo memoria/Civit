@@ -9,8 +9,8 @@
 import UIKit
 
 class HomeRowCell: UICollectionViewCell {
-    let nameLabel = UILabel(text: "App name", font: .systemFont(ofSize: 16))
-    let companyLabel = UILabel(text: "Company name", font: .systemFont(ofSize: 16))
+    let nameLabel = UILabel(text: "App name", font: .systemFont(ofSize: 12))
+    let companyLabel = UILabel(text: "Company name", font: .boldSystemFont(ofSize: 12))
     
     let imageView = UIImageView(cornerRadius: 8)
     let getButton = UIButton(title: "View")
@@ -20,8 +20,8 @@ class HomeRowCell: UICollectionViewCell {
         
         //Mark: Customize UI elements
         imageView.backgroundColor = .red
-        imageView.widthAnchor.constraint(equalToConstant: 64).isActive = true
-        imageView.constrainHeight(constant: 64)
+        imageView.widthAnchor.constraint(equalToConstant: 84).isActive = true
+        imageView.constrainHeight(constant: 84)
         
         getButton.backgroundColor = .mainOrange
         getButton.setTitleColor(.white, for: .normal)

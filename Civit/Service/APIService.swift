@@ -11,24 +11,28 @@ import Foundation
 class APIService {
     static let shared = APIService() // singleton
     
+    // Air Pollution
     func fetchGames(completion: @escaping (HomeGroup?, Error?) -> ()) {
-        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/climateChange.json?alt=media&token=11a81f31-ec5f-4a9d-9148-fe186856eca6"
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/bioDLossReal.json?alt=media&token=07fd9f15-2d74-475f-9cd3-5e44d032e724"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
+    // Biodiversity Loss
     func fetchTopGrossing(completion: @escaping (HomeGroup?, Error?) -> ()) {
-        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/policyRegulations.json?alt=media&token=fd204143-a957-43b9-905f-19ac231033c0"
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/bioDRealREAL.json?alt=media&token=de0fbec7-9c8c-49ee-8534-8329aa9c5101"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
+    // Policy & Reg
     func fetchFreeApps(completion: @escaping (HomeGroup?, Error?) -> ()) {
         let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/horizontalCellsData.json?alt=media&token=5ccabb62-d7b8-4cb2-bb47-57e225f7263c"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
+    // Header Cells
     func fetchSocialApps(completion: @escaping ([SocialApp]?, Error?) -> Void) {
-//        let urlString = "https://api.letsbuildthatapp.com/appstore/social"
-        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/header.json?alt=media&token=03e821a3-db88-4484-b921-e34a3423abdf"
+//        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/header.json?alt=media&token=03e821a3-db88-4484-b921-e34a3423abdf"
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/headerRealData.json?alt=media&token=61187a08-d41b-4222-9b02-a3b1eb2a71cd"
        fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     

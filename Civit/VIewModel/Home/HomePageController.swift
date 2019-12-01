@@ -149,7 +149,7 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
 //        navigationController?.pushViewController(redViewController, animated: true)
         
         
-        guard let url = URL(string: "https://stackoverflow.com") else { return }
+        guard let url = URL(string: "https://yahoo.com") else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
