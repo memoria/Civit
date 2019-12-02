@@ -13,19 +13,25 @@ class APIService {
     
     // Air Pollution
     func fetchGames(completion: @escaping (HomeGroup?, Error?) -> ()) {
-        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/bioDLossReal.json?alt=media&token=07fd9f15-2d74-475f-9cd3-5e44d032e724"
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/airPollution.json?alt=media&token=590af7d4-3af7-41b0-b396-6f8e6e82e307"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
     // Biodiversity Loss
     func fetchTopGrossing(completion: @escaping (HomeGroup?, Error?) -> ()) {
-        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/bioDRealREAL.json?alt=media&token=de0fbec7-9c8c-49ee-8534-8329aa9c5101"
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/bioDRealREAL.json?alt=media&token=334b4764-9945-4938-b981-519dc87a3fca"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
     // Policy & Reg
     func fetchFreeApps(completion: @escaping (HomeGroup?, Error?) -> ()) {
-        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/horizontalCellsData.json?alt=media&token=5ccabb62-d7b8-4cb2-bb47-57e225f7263c"
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/policy.json?alt=media&token=52015a74-fe86-4789-8ae6-750ab218101d"
+        fetchGenericJSONData(urlString: urlString, completion: completion)
+    }
+    
+    // Policy & Reg
+    func fetchClimateChange(completion: @escaping (HomeGroup?, Error?) -> ()) {
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/climateChangeReal.json?alt=media&token=61fed177-e049-468c-9f84-b2d53460ac78"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     

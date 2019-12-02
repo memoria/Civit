@@ -45,6 +45,7 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
         var group1: HomeGroup?
         var group2: HomeGroup?
         var group3: HomeGroup?
+        var group4: HomeGroup?
       
         dispatchGroup.enter()
         APIService.shared.fetchGames { (homeGroup, err) in
@@ -80,6 +81,19 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
             group3 = homeGroup
         }
         
+        // Climate Change Fetch
+        dispatchGroup.enter()
+        APIService.shared.fetchClimateChange { (homeGroup, err) in
+            dispatchGroup.leave()
+            
+            if let err = err {
+                print ("Failed to fetch games: ", err)
+                return
+            }
+            
+            group4 = homeGroup
+        }
+        
         dispatchGroup.enter()
         APIService.shared.fetchSocialApps { (apps, err) in
             dispatchGroup.leave()
@@ -95,8 +109,9 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
             guard let games = group1 else { return }
             guard let topGrossing = group2 else { return }
             guard let freeApps = group3 else { return }
+            guard let climateChange = group4 else { return }
             
-            self.groups.append(contentsOf: [games, topGrossing, freeApps])
+            self.groups.append(contentsOf: [games, topGrossing, freeApps, climateChange])
             self.collectionView.reloadData()
         }
     }
