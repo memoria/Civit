@@ -53,10 +53,9 @@ class HomeHorizontalController: HorizontalSnappingController, UICollectionViewDe
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let app = homeGroup?.feed.results[indexPath.item]
+        guard let articleUrl = URL(string: app?.articleLink ?? "https://ign.com") else { return}
         
-        
-        guard let url = URL(string: "https://ign.com") else { return }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        UIApplication.shared.open(articleUrl, options: [:], completionHandler: nil)
         didSelectHandler?(app!)
         print(app?.name)
     }
