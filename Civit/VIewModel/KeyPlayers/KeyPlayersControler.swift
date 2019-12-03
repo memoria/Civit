@@ -10,6 +10,12 @@ import UIKit
 
 class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayout {
     let cellId = "cellId"
+    
+    let players = [
+        KeyPlayersItem.init(category: "Life Hack", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "What the heck I do now", backgroundColor: .white),
+        KeyPlayersItem.init(category: "Vanille Porxie", title: "New dude your Time", image: #imageLiteral(resourceName: "logo"), description: "BLAAAAA I do now", backgroundColor: #colorLiteral(red: 0.9895765185, green: 0.9692960382, blue: 0.7291715741, alpha: 1))
+    ]
+    
     var startingFrame: CGRect?
     var keyPlayersFullScreenController: KeyPlayersFullScreenController!
     
@@ -27,11 +33,13 @@ class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayo
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return players.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! KeyPlayersCell
+        
+        cell.playerItem = players[indexPath.item]
         return cell
     }
     
@@ -49,6 +57,7 @@ class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayo
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let KeyPlayersFullScreen = KeyPlayersFullScreenController()
+        KeyPlayersFullScreen.playerItem = players[indexPath.row]
         KeyPlayersFullScreen.dismissHandler = {
             self.handleRemoveRedView()
         }

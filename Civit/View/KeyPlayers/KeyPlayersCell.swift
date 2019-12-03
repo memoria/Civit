@@ -9,6 +9,15 @@
 import UIKit
 
 class KeyPlayersCell: UICollectionViewCell {
+    var playerItem: KeyPlayersItem! {
+        didSet {
+            categoryLabel.text = playerItem.category
+            titleLabel.text = playerItem.title
+            imageView.image = playerItem.image
+            descriptionLabel.text = playerItem.description
+        }
+    }
+    
     let imageView = UIImageView(image: #imageLiteral(resourceName: "garden"))
     
     let categoryLabel = UILabel(text: "ENVIRONMENTALIST", font: .boldSystemFont(ofSize: 20))
@@ -19,6 +28,7 @@ class KeyPlayersCell: UICollectionViewCell {
         super.init(frame: frame)
         
         backgroundColor = .white
+        clipsToBounds = true
         layer.cornerRadius = 16
         
         imageView.contentMode = .scaleAspectFill

@@ -54,6 +54,7 @@
 		96D4CD3C2381D8CE007BBA91 /* KeyPlayersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4CD3B2381D8CE007BBA91 /* KeyPlayersCell.swift */; };
 		96D4CD402381F06F007BBA91 /* KeyPlayersFullScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4CD3F2381F06F007BBA91 /* KeyPlayersFullScreenController.swift */; };
 		96D4CD422381FEE3007BBA91 /* KeyPlayersFullScreenDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4CD412381FEE3007BBA91 /* KeyPlayersFullScreenDescriptionCell.swift */; };
+		96EAA8462395E8860017B065 /* KeyPlayersItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EAA8452395E8860017B065 /* KeyPlayersItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		96D4CD3B2381D8CE007BBA91 /* KeyPlayersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPlayersCell.swift; sourceTree = "<group>"; };
 		96D4CD3F2381F06F007BBA91 /* KeyPlayersFullScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPlayersFullScreenController.swift; sourceTree = "<group>"; };
 		96D4CD412381FEE3007BBA91 /* KeyPlayersFullScreenDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPlayersFullScreenDescriptionCell.swift; sourceTree = "<group>"; };
+		96EAA8452395E8860017B065 /* KeyPlayersItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPlayersItem.swift; sourceTree = "<group>"; };
 		CBCFB16769E07DBEA0B2592F /* Pods-Civit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Civit.debug.xcconfig"; path = "Target Support Files/Pods-Civit/Pods-Civit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 				0DB87D352364B52500059DC8 /* Page.swift */,
 				964C78DD237989250087969B /* HomeGroup.swift */,
 				9688D4A7237C1D9700E2E577 /* SocialApp.swift */,
+				96EAA8452395E8860017B065 /* KeyPlayersItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				964C78D523797AFE0087969B /* HomeHeaderHorizontalController.swift in Sources */,
 				96D4CD3C2381D8CE007BBA91 /* KeyPlayersCell.swift in Sources */,
 				96BA6BC623670CF1001A1112 /* fonts.swift in Sources */,
+				96EAA8462395E8860017B065 /* KeyPlayersItem.swift in Sources */,
 				964C78D12378F2EA0087969B /* HomeRowCell.swift in Sources */,
 				0DFA0C822361294100189515 /* SwipingController.swift in Sources */,
 				969C1E37236F0E5F00EACD2D /* BaseTabBarController.swift in Sources */,

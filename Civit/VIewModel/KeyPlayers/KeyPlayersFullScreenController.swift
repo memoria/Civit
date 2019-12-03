@@ -10,6 +10,7 @@ import UIKit
 
 class KeyPlayersFullScreenController: UITableViewController {
     var dismissHandler: (() -> ())?
+    var playerItem: KeyPlayersItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class KeyPlayersFullScreenController: UITableViewController {
         if indexPath.item == 0 {
             let headerCell = KeyPlayerFullScreenHeaderCell()
             headerCell.closeButton.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
+            headerCell.keyPlayersCell.playerItem = playerItem
             return headerCell
         }
         
