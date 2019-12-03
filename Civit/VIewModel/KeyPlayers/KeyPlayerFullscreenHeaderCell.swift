@@ -23,7 +23,7 @@ class KeyPlayerFullScreenHeaderCell: UITableViewCell {
         keyPlayersCell.fillSuperview()
         
         addSubview(closeButton)
-        closeButton.anchor(top: topAnchor, leading: nil, bottom: nil, trailing: trailingAnchor, padding: .init(top: 12, left: 0, bottom: 0, right: 12), size: .init(width: 72, height: 36))
+        closeButton.anchor(top: topAnchor, leading: nil, bottom: nil, trailing: trailingAnchor, padding: .init(top: 40, left: 0, bottom: 0, right: 12), size: .init(width: 72, height: 36))
     }
     
     required init?(coder: NSCoder) {

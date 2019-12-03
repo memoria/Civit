@@ -15,6 +15,7 @@ class KeyPlayersCell: UICollectionViewCell {
             titleLabel.text = playerItem.title
             imageView.image = playerItem.image
             descriptionLabel.text = playerItem.description
+            backgroundColor = playerItem.backgroundColor
         }
     }
     
@@ -39,7 +40,7 @@ class KeyPlayersCell: UICollectionViewCell {
         
         let stackView = VerticalStackView(arrangedSubViews: [categoryLabel, titleLabel, imageContainerView, descriptionLabel], spacing: 8)
         addSubview(stackView)
-        stackView.fillSuperview(padding: .init(top: 24, left: 24, bottom: 24, right: 24))
+        stackView.fillSuperview(padding: .init(top: 40, left: 24, bottom: 24, right: 24))
         
     }
     

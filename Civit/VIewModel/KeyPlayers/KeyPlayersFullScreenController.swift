@@ -11,6 +11,7 @@ import UIKit
 class KeyPlayersFullScreenController: UITableViewController {
     var dismissHandler: (() -> ())?
     var playerItem: KeyPlayersItem?
+    var bottomSafeAreaHeight = UIApplication.shared.statusBarFrame.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,8 @@ class KeyPlayersFullScreenController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.contentInset = .init(top: 0, left: 0, bottom: bottomSafeAreaHeight, right: 0)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,6 +32,7 @@ class KeyPlayersFullScreenController: UITableViewController {
             let headerCell = KeyPlayerFullScreenHeaderCell()
             headerCell.closeButton.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
             headerCell.keyPlayersCell.playerItem = playerItem
+            headerCell.keyPlayersCell.layer.cornerRadius = 0
             return headerCell
         }
         
