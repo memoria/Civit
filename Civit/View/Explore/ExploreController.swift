@@ -10,8 +10,10 @@ import UIKit
 
 class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout {
     let cellId = "cellId"
+    fileprivate let multipleStoriesCellId = "multipleStoriesCellId"
     
     let players = [
+        KeyPlayersItem.init(category: "THE DAILY LIST", title: "Test ddrive this cell dawf", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white),
         KeyPlayersItem.init(category: "Life Hack", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "What the heck I do now", backgroundColor: .white),
         KeyPlayersItem.init(category: "Vanille Porxie", title: "New dude your Time", image: #imageLiteral(resourceName: "logo"), description: "BLAAAAA I do now", backgroundColor: #colorLiteral(red: 0.9895765185, green: 0.9692960382, blue: 0.7291715741, alpha: 1))
     ]
@@ -30,7 +32,7 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
         collectionView.backgroundColor = #colorLiteral(red: 0.9537788033, green: 0.9487789273, blue: 0.9574493766, alpha: 1)
         
         collectionView.register(KeyPlayersCell.self, forCellWithReuseIdentifier: cellId)
-//        collectionView.register(ExploreMultipleStoriesCell, forCellWithReuseIdentifier: <#T##String#>)
+        collectionView.register(ExploreMultipleStoriesCell.self, forCellWithReuseIdentifier: multipleStoriesCellId)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,6 +40,12 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: multipleStoriesCellId, for: indexPath) as! ExploreMultipleStoriesCell
+            cell.multipleStoriesItem = players[indexPath.item]
+            return cell
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! KeyPlayersCell
         
         cell.playerItem = players[indexPath.item]
@@ -45,7 +53,7 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 64, height: 400)
+        return .init(width: view.frame.width - 64, height: 500)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
