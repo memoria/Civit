@@ -18,6 +18,8 @@
 		9606256023784D1200D1C807 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606255D23784D1200D1C807 /* Extensions.swift */; };
 		9606256123784D1200D1C807 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606255E23784D1200D1C807 /* UIView+Layout.swift */; };
 		9606256223784D1200D1C807 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606255F23784D1200D1C807 /* VerticalStackView.swift */; };
+		961E8E14239753B400041B7A /* ExploreMultipleStoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E8E13239753B400041B7A /* ExploreMultipleStoriesCell.swift */; };
+		961E8E162398049800041B7A /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E8E152398049800041B7A /* ExploreController.swift */; };
 		962CFB4D235E86B200715378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962CFB4C235E86B200715378 /* AppDelegate.swift */; };
 		962CFB4F235E86B200715378 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962CFB4E235E86B200715378 /* SceneDelegate.swift */; };
 		962CFB51235E86B200715378 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962CFB50235E86B200715378 /* ViewController.swift */; };
@@ -70,6 +72,8 @@
 		9606255D23784D1200D1C807 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9606255E23784D1200D1C807 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		9606255F23784D1200D1C807 /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		961E8E13239753B400041B7A /* ExploreMultipleStoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreMultipleStoriesCell.swift; sourceTree = "<group>"; };
+		961E8E152398049800041B7A /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		962CFB49235E86B200715378 /* Civit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Civit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		962CFB4C235E86B200715378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		962CFB4E235E86B200715378 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		0DB87D382364DC0D00059DC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				961E8E122397539500041B7A /* Explore */,
 				96D4CD3A2381D8B9007BBA91 /* KeyPlayers */,
 				9606255523783F8B00D1C807 /* Home */,
 				0DFA0C832362225F00189515 /* PageCell.swift */,
@@ -217,6 +222,15 @@
 				96B8A5AD238060C3004468AB /* BetterSnappingLayout.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		961E8E122397539500041B7A /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				961E8E13239753B400041B7A /* ExploreMultipleStoriesCell.swift */,
+				961E8E152398049800041B7A /* ExploreController.swift */,
+			);
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		962CFB40235E86B200715378 = {
@@ -445,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961E8E14239753B400041B7A /* ExploreMultipleStoriesCell.swift in Sources */,
 				96D4CD402381F06F007BBA91 /* KeyPlayersFullScreenController.swift in Sources */,
 				9688D4A8237C1D9700E2E577 /* SocialApp.swift in Sources */,
 				964C78D3237972010087969B /* HomePageHeader.swift in Sources */,
@@ -465,6 +480,7 @@
 				96D4CD422381FEE3007BBA91 /* KeyPlayersFullScreenDescriptionCell.swift in Sources */,
 				963D04DF23823F5D00FDD035 /* KeyPlayerFullscreenHeaderCell.swift in Sources */,
 				9606255423783DA200D1C807 /* BaseListController.swift in Sources */,
+				961E8E162398049800041B7A /* ExploreController.swift in Sources */,
 				0DB87D3B2364DF7800059DC8 /* colors.swift in Sources */,
 				964C78D723797CDA0087969B /* HomeHeaderCell.swift in Sources */,
 				9606256023784D1200D1C807 /* Extensions.swift in Sources */,

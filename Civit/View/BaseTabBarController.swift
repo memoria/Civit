@@ -13,7 +13,7 @@ class BaseTabBarController: UITabBarController {
         super.viewDidLoad()
         
         viewControllers = [createNavController(viewController: HomePageController(), title: "Home", imageName: "home"),
-                           createNavController(viewController: UIViewController(), title: "Explore", imageName: "search"),
+                           createNavController(viewController: ExploreController(), title: "Explore", imageName: "search"),
                            createNavController(viewController: KeyPlayersController(), title: "Key Players", imageName: "key-players"),
                            createNavController(viewController: UIViewController(), title: "Action", imageName: "action")]
     }

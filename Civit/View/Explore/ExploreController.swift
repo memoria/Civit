@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayout {
+class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout {
     let cellId = "cellId"
     
     let players = [
