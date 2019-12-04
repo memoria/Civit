@@ -142,6 +142,7 @@
 		0DB87D372364D9EA00059DC8 /* VIewModel */ = {
 			isa = PBXGroup;
 			children = (
+				961E8E172398180100041B7A /* Explore */,
 				96D4CD372381D77E007BBA91 /* KeyPlayers */,
 				9606255023783BFC00D1C807 /* Home */,
 				0DFA0C812361294100189515 /* SwipingController.swift */,
@@ -228,6 +229,13 @@
 			isa = PBXGroup;
 			children = (
 				961E8E13239753B400041B7A /* ExploreMultipleStoriesCell.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		961E8E172398180100041B7A /* Explore */ = {
+			isa = PBXGroup;
+			children = (
 				961E8E152398049800041B7A /* ExploreController.swift */,
 			);
 			path = Explore;

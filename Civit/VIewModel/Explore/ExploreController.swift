@@ -9,13 +9,13 @@
 import UIKit
 
 class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout {
-    let cellId = "cellId"
-    fileprivate let multipleStoriesCellId = "multipleStoriesCellId"
+//    let cellId = "cellId"
+//    fileprivate let multipleStoriesCellId = "multipleStoriesCellId"
     
     let players = [
-        KeyPlayersItem.init(category: "THE DAILY LIST", title: "Test ddrive this cell dawf", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white),
-        KeyPlayersItem.init(category: "Life Hack", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "What the heck I do now", backgroundColor: .white),
-        KeyPlayersItem.init(category: "Vanille Porxie", title: "New dude your Time", image: #imageLiteral(resourceName: "logo"), description: "BLAAAAA I do now", backgroundColor: #colorLiteral(red: 0.9895765185, green: 0.9692960382, blue: 0.7291715741, alpha: 1))
+        KeyPlayersItem.init(category: "THE DAILY LIST", title: "Test ddrive this cell dawf", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple),
+        KeyPlayersItem.init(category: "Life Hack", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "What the heck I do now", backgroundColor: .white, cellType: .single),
+        KeyPlayersItem.init(category: "Vanille Porxie", title: "New dude your Time", image: #imageLiteral(resourceName: "logo"), description: "BLAAAAA I do now", backgroundColor: #colorLiteral(red: 0.9895765185, green: 0.9692960382, blue: 0.7291715741, alpha: 1), cellType: .single)
     ]
     
     var startingFrame: CGRect?
@@ -28,11 +28,12 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         navigationController?.isNavigationBarHidden = true
         collectionView.backgroundColor = #colorLiteral(red: 0.9537788033, green: 0.9487789273, blue: 0.9574493766, alpha: 1)
         
-        collectionView.register(KeyPlayersCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(ExploreMultipleStoriesCell.self, forCellWithReuseIdentifier: multipleStoriesCellId)
+        collectionView.register(KeyPlayersCell.self, forCellWithReuseIdentifier: KeyPlayersItem.CellType.single.rawValue)
+        collectionView.register(ExploreMultipleStoriesCell.self, forCellWithReuseIdentifier: KeyPlayersItem.CellType.multiple.rawValue)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -40,15 +41,15 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.item == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: multipleStoriesCellId, for: indexPath) as! ExploreMultipleStoriesCell
+        let cellType = players[indexPath.item].cellType.rawValue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType, for: indexPath)
+        
+        if let cell = cell as? KeyPlayersCell {
+            cell.playerItem = players[indexPath.item]
+        } else if let cell = cell as? ExploreMultipleStoriesCell {
             cell.multipleStoriesItem = players[indexPath.item]
-            return cell
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! KeyPlayersCell
-        
-        cell.playerItem = players[indexPath.item]
         return cell
     }
     

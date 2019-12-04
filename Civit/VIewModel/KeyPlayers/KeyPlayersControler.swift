@@ -9,11 +9,11 @@
 import UIKit
 
 class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayout {
-    let cellId = "cellId"
+//    let cellId = "cellId"
     
     let players = [
-        KeyPlayersItem.init(category: "Life Hack", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "What the heck I do now", backgroundColor: .white),
-        KeyPlayersItem.init(category: "Vanille Porxie", title: "New dude your Time", image: #imageLiteral(resourceName: "logo"), description: "BLAAAAA I do now", backgroundColor: #colorLiteral(red: 0.9895765185, green: 0.9692960382, blue: 0.7291715741, alpha: 1))
+        KeyPlayersItem.init(category: "Life Hack", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "What the heck I do now", backgroundColor: .white, cellType: .single),
+        KeyPlayersItem.init(category: "Vanille Porxie", title: "New dude your Time", image: #imageLiteral(resourceName: "logo"), description: "BLAAAAA I do now", backgroundColor: #colorLiteral(red: 0.9895765185, green: 0.9692960382, blue: 0.7291715741, alpha: 1), cellType: .single)
     ]
     
     var startingFrame: CGRect?
@@ -29,7 +29,7 @@ class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayo
         navigationController?.isNavigationBarHidden = true
         collectionView.backgroundColor = #colorLiteral(red: 0.9537788033, green: 0.9487789273, blue: 0.9574493766, alpha: 1)
         
-        collectionView.register(KeyPlayersCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(KeyPlayersCell.self, forCellWithReuseIdentifier: KeyPlayersItem.CellType.single.rawValue)
 //        collectionView.register(ExploreMultipleStoriesCell, forCellWithReuseIdentifier: <#T##String#>)
     }
     
@@ -38,7 +38,7 @@ class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayo
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! KeyPlayersCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KeyPlayersItem.CellType.single.rawValue, for: indexPath) as! KeyPlayersCell
         
         cell.playerItem = players[indexPath.item]
         return cell
