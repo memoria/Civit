@@ -35,8 +35,18 @@ class APIService {
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
+    func fetchOverfishing(completion: @escaping (HomeGroup?, Error?) -> ()) {
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/overfishing.json?alt=media&token=0d9509c8-c9ca-4cdf-bf8b-a167b8c829d4"
+        fetchGenericJSONData(urlString: urlString, completion: completion)
+    }
+    
+    func fetchOceanPollution(completion: @escaping (HomeGroup?, Error?) -> ()) {
+        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/oceanPollution.json?alt=media&token=f69b2496-3dcc-4fbe-bc5e-2273da070302"
+        fetchGenericJSONData(urlString: urlString, completion: completion)
+    }
+    
     // Header Cells
-    func fetchSocialApps(completion: @escaping ([SocialApp]?, Error?) -> Void) {
+    func fetchFeaturedStories(completion: @escaping ([SocialApp]?, Error?) -> Void) {
 //        let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/header.json?alt=media&token=03e821a3-db88-4484-b921-e34a3423abdf"
         let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/headerRealData.json?alt=media&token=61187a08-d41b-4222-9b02-a3b1eb2a71cd"
        fetchGenericJSONData(urlString: urlString, completion: completion)
