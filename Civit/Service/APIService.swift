@@ -18,7 +18,7 @@ class APIService {
     }
     
     // Biodiversity Loss
-    func fetchTopGrossing(completion: @escaping (HomeGroup?, Error?) -> ()) {
+    func fetchBiodiversityLoss(completion: @escaping (HomeGroup?, Error?) -> ()) {
         let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/bioDRealREAL.json?alt=media&token=334b4764-9945-4938-b981-519dc87a3fca"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }

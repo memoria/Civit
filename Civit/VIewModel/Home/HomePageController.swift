@@ -59,7 +59,7 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
         }
         
         dispatchGroup.enter()
-        APIService.shared.fetchTopGrossing { (homeGroup, err) in
+        APIService.shared.fetchBiodiversityLoss { (homeGroup, err) in
             dispatchGroup.leave()
             if let err = err {
                 print ("Failed to fetch games: ", err)

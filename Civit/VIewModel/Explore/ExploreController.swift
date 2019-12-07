@@ -46,8 +46,9 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
         let dispatchGroup = DispatchGroup()
         
         var airPollution: HomeGroup?
+        var policyRegulation: HomeGroup?
         var biodiversity: HomeGroup?
-        
+        var climateChange: HomeGroup?
         
         dispatchGroup.enter()
         APIService.shared.fetchAirPollution { (homeGroup, err) in
@@ -57,7 +58,19 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
         
         dispatchGroup.enter()
         APIService.shared.fetchPolicyRegulation { (homeGroup, err) in
+            policyRegulation = homeGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        APIService.shared.fetchBiodiversityLoss { (homeGroup, err) in
             biodiversity = homeGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        APIService.shared.fetchClimateChange { (homeGroup, err) in
+            climateChange = homeGroup
             dispatchGroup.leave()
         }
         
@@ -68,7 +81,9 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
             
             self.players = [
                 KeyPlayersItem.init(category: "By Land", title: airPollution?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: airPollution?.feed.results ?? []),
-                KeyPlayersItem.init(category: "By Sea", title: biodiversity?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: biodiversity?.feed.results ?? [])
+                KeyPlayersItem.init(category: "By Sea", title: policyRegulation?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: policyRegulation?.feed.results ?? []),
+                KeyPlayersItem.init(category: "By Land & Sea", title: biodiversity?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: biodiversity?.feed.results ?? []),
+                KeyPlayersItem.init(category: "By Land & Sea", title: climateChange?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: climateChange?.feed.results ?? [])
             ]
             
             self.collectionView.reloadData()
