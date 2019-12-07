@@ -33,7 +33,7 @@ class MultipleStoriesCell: UICollectionViewCell {
         super.init(frame: frame)
         
         //Mark: Customize UI elements
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = .white
         imageView.widthAnchor.constraint(equalToConstant: 84).isActive = true
         imageView.constrainHeight(constant: 84)
         nameLabel.numberOfLines = 2

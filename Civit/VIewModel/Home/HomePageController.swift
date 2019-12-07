@@ -95,7 +95,7 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
         }
         
         dispatchGroup.enter()
-        APIService.shared.fetchSocialApps { (apps, err) in
+        APIService.shared.fetchFeaturedStories { (apps, err) in
             dispatchGroup.leave()
             apps?.forEach({ print($0.name) })
             
@@ -111,7 +111,7 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
             guard let freeApps = group3 else { return }
             guard let climateChange = group4 else { return }
             
-            self.groups.append(contentsOf: [games, topGrossing, freeApps, climateChange])
+            self.groups.append(contentsOf: [topGrossing, freeApps, climateChange])
             self.collectionView.reloadData()
         }
     }

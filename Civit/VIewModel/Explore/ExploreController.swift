@@ -49,6 +49,8 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
         var policyRegulation: HomeGroup?
         var biodiversity: HomeGroup?
         var climateChange: HomeGroup?
+        var oceanPollution: HomeGroup?
+        var overfishing: HomeGroup?
         
         dispatchGroup.enter()
         APIService.shared.fetchAirPollution { (homeGroup, err) in
@@ -69,6 +71,18 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
         }
         
         dispatchGroup.enter()
+        APIService.shared.fetchOceanPollution{ (homeGroup, err) in
+            oceanPollution = homeGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        APIService.shared.fetchOverfishing{ (homeGroup, err) in
+            overfishing = homeGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
         APIService.shared.fetchClimateChange { (homeGroup, err) in
             climateChange = homeGroup
             dispatchGroup.leave()
@@ -83,7 +97,9 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
                 KeyPlayersItem.init(category: "By Land", title: airPollution?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: airPollution?.feed.results ?? []),
                 KeyPlayersItem.init(category: "By Sea", title: policyRegulation?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: policyRegulation?.feed.results ?? []),
                 KeyPlayersItem.init(category: "By Land & Sea", title: biodiversity?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: biodiversity?.feed.results ?? []),
-                KeyPlayersItem.init(category: "By Land & Sea", title: climateChange?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: climateChange?.feed.results ?? [])
+                KeyPlayersItem.init(category: "By Land & Sea", title: climateChange?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: climateChange?.feed.results ?? []),
+                KeyPlayersItem.init(category: "By Sea", title: oceanPollution?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: oceanPollution?.feed.results ?? []),
+                KeyPlayersItem.init(category: "By Sea", title: overfishing?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: overfishing?.feed.results ?? [])
             ]
             
             self.collectionView.reloadData()
