@@ -16,6 +16,8 @@ struct KeyPlayersItem {
     let backgroundColor: UIColor
     let cellType: CellType
     
+    let stories: [FeedResult]
+    
     enum CellType: String {
         case single, multiple
     }

@@ -48,7 +48,7 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
         var group4: HomeGroup?
       
         dispatchGroup.enter()
-        APIService.shared.fetchGames { (homeGroup, err) in
+        APIService.shared.fetchAirPollution { (homeGroup, err) in
             dispatchGroup.leave()
             if let err = err {
                 print ("Failed to fetch games: ", err)
@@ -70,7 +70,7 @@ class HomePageController: BaseListController, UICollectionViewDelegateFlowLayout
         
         
         dispatchGroup.enter()
-        APIService.shared.fetchFreeApps { (homeGroup, err) in
+        APIService.shared.fetchPolicyRegulation { (homeGroup, err) in
             dispatchGroup.leave()
             
             if let err = err {
