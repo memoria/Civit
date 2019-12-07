@@ -20,14 +20,14 @@ class ExploreMultipleStoriesCell: UICollectionViewCell {
     let titleLabel = UILabel(text: "Boyan Slat", font: .boldSystemFont(ofSize: 28))
     
     
-    let multipleStoriesController = UIViewController()
+    let multipleStoriesController = ExploreMultipleStoriesController()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
         layer.cornerRadius = 16
         
-        multipleStoriesController.view.backgroundColor = .red
+//        multipleStoriesController.view.backgroundColor = .red
         titleLabel.numberOfLines = 2
         
         let stackView = VerticalStackView(arrangedSubViews: [categoryLabel, titleLabel, multipleStoriesController.view], spacing: 12)
