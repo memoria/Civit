@@ -9,14 +9,15 @@
 import UIKit
 
 class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout {
-//    let cellId = "cellId"
-//    fileprivate let multipleStoriesCellId = "multipleStoriesCellId"
+    var players = [KeyPlayersItem]()
     
-    let players = [
-        KeyPlayersItem.init(category: "THE DAILY LIST", title: "Test ddrive this cell dawf", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple),
-        KeyPlayersItem.init(category: "Life Hack", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "What the heck I do now", backgroundColor: .white, cellType: .single),
-        KeyPlayersItem.init(category: "Vanille Porxie", title: "New dude your Time", image: #imageLiteral(resourceName: "logo"), description: "BLAAAAA I do now", backgroundColor: #colorLiteral(red: 0.9895765185, green: 0.9692960382, blue: 0.7291715741, alpha: 1), cellType: .single)
-    ]
+    let loadingIndicator: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        aiv.color = .darkGray
+        aiv.startAnimating()
+        aiv.hidesWhenStopped = true
+        return aiv
+    }()
     
     var startingFrame: CGRect?
     var keyPlayersFullScreenController: KeyPlayersFullScreenController!
@@ -28,12 +29,50 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(loadingIndicator)
+        loadingIndicator.centerInSuperview()
+        
+        fetchData()
 
         navigationController?.isNavigationBarHidden = true
         collectionView.backgroundColor = #colorLiteral(red: 0.9537788033, green: 0.9487789273, blue: 0.9574493766, alpha: 1)
         
         collectionView.register(KeyPlayersCell.self, forCellWithReuseIdentifier: KeyPlayersItem.CellType.single.rawValue)
         collectionView.register(ExploreMultipleStoriesCell.self, forCellWithReuseIdentifier: KeyPlayersItem.CellType.multiple.rawValue)
+    }
+    
+    fileprivate func fetchData() {
+        let dispatchGroup = DispatchGroup()
+        
+        var airPollution: HomeGroup?
+        var biodiversity: HomeGroup?
+        
+        
+        dispatchGroup.enter()
+        APIService.shared.fetchAirPollution { (homeGroup, err) in
+            airPollution = homeGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        APIService.shared.fetchPolicyRegulation { (homeGroup, err) in
+            biodiversity = homeGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            print("Finished fetching")
+            
+            self.loadingIndicator.stopAnimating()
+            
+            self.players = [
+                KeyPlayersItem.init(category: "By Land", title: airPollution?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: airPollution?.feed.results ?? []),
+                KeyPlayersItem.init(category: "By Sea", title: biodiversity?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: biodiversity?.feed.results ?? [])
+            ]
+            
+            self.collectionView.reloadData()
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -124,4 +163,4 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
         })
     }
     
-} // end KeyPlayersController
+}

@@ -12,7 +12,7 @@ class APIService {
     static let shared = APIService() // singleton
     
     // Air Pollution
-    func fetchGames(completion: @escaping (HomeGroup?, Error?) -> ()) {
+    func fetchAirPollution(completion: @escaping (HomeGroup?, Error?) -> ()) {
         let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/airPollution.json?alt=media&token=590af7d4-3af7-41b0-b396-6f8e6e82e307"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
@@ -24,7 +24,7 @@ class APIService {
     }
     
     // Policy & Reg
-    func fetchFreeApps(completion: @escaping (HomeGroup?, Error?) -> ()) {
+    func fetchPolicyRegulation(completion: @escaping (HomeGroup?, Error?) -> ()) {
         let urlString = "https://firebasestorage.googleapis.com/v0/b/civit-d72ba.appspot.com/o/policy.json?alt=media&token=52015a74-fe86-4789-8ae6-750ab218101d"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }

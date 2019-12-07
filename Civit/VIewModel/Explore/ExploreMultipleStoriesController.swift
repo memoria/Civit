@@ -18,15 +18,6 @@ class ExploreMultipleStoriesController: BaseListController, UICollectionViewDele
         collectionView.backgroundColor = .white
         collectionView.isScrollEnabled = false
         collectionView.register(MultipleStoriesCell.self, forCellWithReuseIdentifier: cellId)
-        
-        APIService.shared.fetchGames { (HomeGroup, err) in
-            HomeGroup?.feed.results
-            self.results = HomeGroup?.feed.results ?? []
-            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -43,7 +34,7 @@ class ExploreMultipleStoriesController: BaseListController, UICollectionViewDele
         return .init(width: view.frame.width, height: 72)
     }
     
-    fileprivate let spacing: CGFloat = 16
+    fileprivate let spacing: CGFloat = 20
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return spacing
     }
