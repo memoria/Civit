@@ -95,7 +95,7 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
             
             self.players = [
                 KeyPlayersItem.init(category: "By Land", title: airPollution?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: airPollution?.feed.results ?? []),
-                KeyPlayersItem.init(category: "By Sea", title: policyRegulation?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: policyRegulation?.feed.results ?? []),
+                KeyPlayersItem.init(category: "By Land", title: policyRegulation?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: policyRegulation?.feed.results ?? []),
                 KeyPlayersItem.init(category: "By Land & Sea", title: biodiversity?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: biodiversity?.feed.results ?? []),
                 KeyPlayersItem.init(category: "By Land & Sea", title: climateChange?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: climateChange?.feed.results ?? []),
                 KeyPlayersItem.init(category: "By Sea", title: oceanPollution?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, stories: oceanPollution?.feed.results ?? []),
@@ -109,6 +109,7 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return players.count
     }
+    
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellType = players[indexPath.item].cellType.rawValue
@@ -136,6 +137,16 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if players[indexPath.item].cellType == .multiple {
+            let fullController = ExploreMultipleStoriesController()
+            fullController.results = self.players[indexPath.item].stories
+            
+//            var prefersStatusBarHidden: Bool { return true }
+            present(fullController, animated: true)
+            return
+        }
+        
+        
         let KeyPlayersFullScreen = KeyPlayersFullScreenController()
         KeyPlayersFullScreen.playerItem = players[indexPath.row]
         KeyPlayersFullScreen.dismissHandler = {
