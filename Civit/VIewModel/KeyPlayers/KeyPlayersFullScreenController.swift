@@ -37,6 +37,7 @@ class KeyPlayersFullScreenController: UITableViewController {
         }
         
         let cell = KeyPlayersFullScreenDescriptionCell()
+        
         return cell
     }
     

@@ -12,17 +12,17 @@ class KeyPlayersFullScreenDescriptionCell: UITableViewCell {
     let descriptionLabel: UILabel = {
         let label = UILabel()
         
-        let attributedText = NSMutableAttributedString(string: "Lorem Ipsum", attributes: [.foregroundColor: UIColor.black])
+        let attributedText = NSMutableAttributedString(string: "The Ocean Cleanup", attributes: [.foregroundColor: UIColor.black])
         
-        attributedText.append(NSAttributedString(string: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis. A erat nam at lectus urna.", attributes: [.foregroundColor: UIColor.gray]))
+        attributedText.append(NSAttributedString(string: " The Ocean Cleanup is a non-government engineering environmental organization based in the Netherlands, that develops technology to extract plastic pollution from the oceans. After a couple of years of various tests they deployed their first full scale prototype", attributes: [.foregroundColor: UIColor.gray]))
         
-        attributedText.append(NSAttributedString(string: "\n\n\nBravo Here", attributes: [.foregroundColor: UIColor.black]))
+        attributedText.append(NSAttributedString(string: "\n\n\nOur Goal", attributes: [.foregroundColor: UIColor.black]))
         
-        attributedText.append(NSAttributedString(string: "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis. A erat nam at lectus urna.", attributes: [.foregroundColor: UIColor.gray]))
+        attributedText.append(NSAttributedString(string: "\nEvery year, millions of tons of plastic enter the oceans primarily from rivers. The plastic afloat across the oceans – legacy plastic – isn’t going away by itself. Therefore, solving ocean plastic pollution requires a combination of stemming the inflow and cleaning up what has already accumulated.", attributes: [.foregroundColor: UIColor.gray]))
         
-        attributedText.append(NSAttributedString(string: "\n\n\nIlspi Lori", attributes: [.foregroundColor: UIColor.black]))
+        attributedText.append(NSAttributedString(string: "\n\n\nThe Road Towards Relief", attributes: [.foregroundColor: UIColor.black]))
         
-        attributedText.append(NSAttributedString(string: "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis. A erat nam at lectus urna.", attributes: [.foregroundColor: UIColor.gray]))
+        attributedText.append(NSAttributedString(string: "\nThe Ocean Cleanup is designing and developing cleanup systems to clean up what is already polluting our oceans and to intercept plastic on its way to the ocean via rivers.", attributes: [.foregroundColor: UIColor.gray]))
         
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.attributedText = attributedText

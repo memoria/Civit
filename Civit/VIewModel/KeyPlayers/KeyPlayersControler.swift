@@ -9,11 +9,12 @@
 import UIKit
 
 class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayout {
-//    let cellId = "cellId"
     
     let players = [
-        KeyPlayersItem.init(category: "Life Hack", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "What the heck I do now", backgroundColor: .white, cellType: .single, stories: []),
-        KeyPlayersItem.init(category: "Vanille Porxie", title: "New dude your Time", image: #imageLiteral(resourceName: "logo"), description: "BLAAAAA I do now", backgroundColor: #colorLiteral(red: 0.9895765185, green: 0.9692960382, blue: 0.7291715741, alpha: 1), cellType: .single, stories: [])
+        KeyPlayersItem.init(category: "ENVIRONMENTALIST", title: "Boyan Slat", image: #imageLiteral(resourceName: "keyplayers-boyan"), description: "\"We aim to clean up 90% of Plastic Pollution\"", backgroundColor: .white, cellType: .single, stories: []),
+        KeyPlayersItem.init(category: "ENVIRONMENTALIST", title: "Greta Thunberg", image: #imageLiteral(resourceName: "keyplayers-greta-wide"), description: "\"We, who have to live with the consequences...\"", backgroundColor: #colorLiteral(red: 0.9895765185, green: 0.9692960382, blue: 0.7291715741, alpha: 1), cellType: .single, stories: []),
+        KeyPlayersItem.init(category: "INVENTOR", title: "Param Jaagi", image: #imageLiteral(resourceName: "paramBetter"), description: "\"Using technology to empower others...\"", backgroundColor: .white, cellType: .single, stories: []),
+        KeyPlayersItem.init(category: "INVENTOR", title: "Christian Kroll", image: #imageLiteral(resourceName: "keyplayers-christianKroll"), description: "\"We believe in everyone's power to do good.\"", backgroundColor: #colorLiteral(red: 0.9895765185, green: 0.9692960382, blue: 0.7291715741, alpha: 1), cellType: .single, stories: [])
     ]
     
     var startingFrame: CGRect?
@@ -30,7 +31,6 @@ class KeyPlayersController: BaseListController, UICollectionViewDelegateFlowLayo
         collectionView.backgroundColor = #colorLiteral(red: 0.9537788033, green: 0.9487789273, blue: 0.9574493766, alpha: 1)
         
         collectionView.register(KeyPlayersCell.self, forCellWithReuseIdentifier: KeyPlayersItem.CellType.single.rawValue)
-//        collectionView.register(ExploreMultipleStoriesCell, forCellWithReuseIdentifier: <#T##String#>)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
