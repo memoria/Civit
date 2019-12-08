@@ -146,6 +146,11 @@ class ExploreController: BaseListController, UICollectionViewDelegateFlowLayout 
             return
         }
         
+//        let cellDetails = socialApps[indexPath.item]
+//        let cellDetails = players[indexPath.item].stories
+//
+//        guard let url = URL(string: cellDetails.first?.articleLink ?? " ") else { return }
+//        UIApplication.shared.open(url, options: [:], completionHandler: nil)
         
         let KeyPlayersFullScreen = KeyPlayersFullScreenController()
         KeyPlayersFullScreen.playerItem = players[indexPath.row]

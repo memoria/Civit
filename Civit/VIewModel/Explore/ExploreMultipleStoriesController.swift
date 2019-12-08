@@ -42,4 +42,11 @@ class ExploreMultipleStoriesController: BaseListController, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return spacing
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyUrl = self.results[indexPath.item].articleLink
+        
+        guard let url = URL(string: storyUrl) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
 }
